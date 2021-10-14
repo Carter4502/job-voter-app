@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import VotingOption from './VotingOption'
+import {Button} from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div class="head">
+      <a href="https://www.twitter.com"><Button className="lb" variant='primary'>Leaderboard</Button></a>  
+      </div>
+      <h1 class="title"> Which internship do you like best? </h1>
+      <div class="container">
+      <VotingOption text="Amazon SDE Intern" />
+      <VotingOption text="Dropbox LAUNCH Intern" />
+      </div>
     </div>
   );
 }
