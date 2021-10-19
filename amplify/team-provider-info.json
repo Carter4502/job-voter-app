@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-jobvoterapp-dev-05314-authRole",
+      "UnauthRoleArn": "arn:aws:iam::113782062168:role/amplify-jobvoterapp-dev-05314-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::113782062168:role/amplify-jobvoterapp-dev-05314-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-jobvoterapp-dev-05314-deployment",
+      "UnauthRoleName": "amplify-jobvoterapp-dev-05314-unauthRole",
+      "StackName": "amplify-jobvoterapp-dev-05314",
+      "StackId": "arn:aws:cloudformation:us-east-1:113782062168:stack/amplify-jobvoterapp-dev-05314/dc292f70-30a0-11ec-87c4-0a0bb2880c01",
+      "AmplifyAppId": "d3m27i75s9udd1"
+    }
+  }
+}

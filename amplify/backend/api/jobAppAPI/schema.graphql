@@ -1,0 +1,8 @@
+type Job @model {
+  id: ID!
+  position: String!
+  company: String!
+  imgURL: String!
+  elo: Int!
+  times: Int!
+}

@@ -1,6 +1,6 @@
 
 .card {
-    background-color: #EBECF0;
+    background-color: #EBECF0!important;
     height: 20rem;
     width: 30rem;
     display: flex;

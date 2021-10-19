@@ -1,19 +1,12 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import VotingOption from './VotingOption'
-import {Button} from 'react-bootstrap';
-
+import React from 'react'
+import Leaderboard from './Leaderboard.js';
+import {Route} from 'react-router-dom';
+import Vote from './Vote.js'
 function App() {
   return (
     <div className="App">
-      <div class="head">
-      <a href="https://www.twitter.com"><Button className="lb" variant='primary'>Leaderboard</Button></a>  
-      </div>
-      <h1 class="title"> Which internship do you like best? </h1>
-      <div class="container">
-      <VotingOption text="Amazon SDE Intern" />
-      <VotingOption text="Dropbox LAUNCH Intern" />
-      </div>
+      <Route exact path={["/","/vote"]} component={Vote} />
+      <Route exact path="/leaderboard" component={Leaderboard} />
     </div>
   );
 }
