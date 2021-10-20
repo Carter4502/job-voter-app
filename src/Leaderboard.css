@@ -1,0 +1,25 @@
+
+h1 {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-bottom: 15px;
+}
+
+.border th,
+td {
+  border: 1px solid rgba(224, 224, 224, 1);
+}
+.border {
+    margin-top: 25px;
+}
+.lb {
+    float: right;
+    margin-right: 1em;
+  }
+  .lb:focus {
+    outline: none !important;
+    outline-offset: none !important;
+    box-shadow: none !important;
+  }
+  .head {
+    padding-top: 1em;
+  }
