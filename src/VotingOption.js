@@ -1,12 +1,16 @@
 import './VotingOption.css';
 
-const VotingOption = ({text}) => {
+const VotingOption = ({image, company, position, salary}) => {
     return (
-        <a href="https://www.google.com">
-        <div class = "card">
-        <h1 class = "jobTitle">{text}</h1>
+        <div className = "card">
+        <div id="container">
+        <span className="helper"></span>
+        <img alt="company logo" src={image} />
         </div>
-        </a>
+        <h1 className = "jobCompany">{company}</h1>
+        <h1 className = "jobTitle">{position}</h1>
+        <h3 className = "jobSalary">${salary}/hr</h3>
+        </div>
     )
 }
 export default VotingOption

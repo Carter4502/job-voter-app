@@ -23,9 +23,11 @@ function Leaderboard() {
           backgroundColor: "#F8F8F8",
           color: theme.palette.common.black,
           fontWeight: 'bold',
+          fontFamily: 'Axiforma Bold'
         },
         [`&.${tableCellClasses.body}`]: {
           fontSize: 16,
+          fontFamily: 'Nunito'
         },
       }));
 
@@ -38,6 +40,7 @@ function Leaderboard() {
             const jobData = await API.graphql(graphqlOperation(listJobs));
             const jobList = jobData.data.listJobs.items;
             console.log('job list', jobList);
+            jobList.sort((el1, el2) => {return el2.elo - el1.elo});
             setJobs(jobList);
         } catch (error) {
             console.log("Error fetching jobs.", error);
@@ -45,13 +48,14 @@ function Leaderboard() {
     }
     return (
             <div>
-            <div className="head">
-                <Link to="/"><Button className="lb" variant='primary'>Contribute</Button></Link>
-            </div>
-            <h1>Leaderboard</h1> 
+                <div className="head3">
+                <Link to="/"><Button className="lb2" variant='primary'>Contribute Votes</Button></Link>
+                </div>
+            <div className = "card2">
+                <h1 className="leaderTitle">Leaderboard</h1>
             <div className="border">
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 250 }} aria-label="simple table">
+                <Table sx={{}} aria-label="simple table">
                     <TableHead>
                     <TableRow>
                         <StyledTableCell>Company</StyledTableCell>
@@ -64,16 +68,17 @@ function Leaderboard() {
                     <TableRow
                     key={job.company}
                     >
-                    <TableCell component="th" scope="row">
+                    <StyledTableCell component="th" scope="row">
                         {job.company}
-                    </TableCell>
-                    <TableCell component="th" scope="row">{job.position}</TableCell>
-                    <TableCell component="th" scope="row">{job.elo}</TableCell>
+                    </StyledTableCell>
+                    <StyledTableCell component="th" scope="row">{job.position}</StyledTableCell>
+                    <StyledTableCell component="th" scope="row">{job.elo}</StyledTableCell>
                     </TableRow>
                 ))}
                 </TableBody>
                 </Table>
             </TableContainer>
+            </div>
             </div>
             </div>
             

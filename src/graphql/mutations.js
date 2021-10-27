@@ -15,6 +15,7 @@ export const createJob = /* GraphQL */ `
       times
       createdAt
       updatedAt
+      salary
     }
   }
 `;
@@ -32,6 +33,7 @@ export const updateJob = /* GraphQL */ `
       times
       createdAt
       updatedAt
+      salary
     }
   }
 `;
