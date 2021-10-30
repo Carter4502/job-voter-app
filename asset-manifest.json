@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/job-voter-app/static/css/main.8be209b7.chunk.css",
+    "main.js": "/job-voter-app/static/js/main.1fe87867.chunk.js",
+    "main.js.map": "/job-voter-app/static/js/main.1fe87867.chunk.js.map",
+    "runtime-main.js": "/job-voter-app/static/js/runtime-main.a94b621a.js",
+    "runtime-main.js.map": "/job-voter-app/static/js/runtime-main.a94b621a.js.map",
+    "static/css/2.c1256375.chunk.css": "/job-voter-app/static/css/2.c1256375.chunk.css",
+    "static/js/2.fa174859.chunk.js": "/job-voter-app/static/js/2.fa174859.chunk.js",
+    "static/js/2.fa174859.chunk.js.map": "/job-voter-app/static/js/2.fa174859.chunk.js.map",
+    "static/js/3.16467a95.chunk.js": "/job-voter-app/static/js/3.16467a95.chunk.js",
+    "static/js/3.16467a95.chunk.js.map": "/job-voter-app/static/js/3.16467a95.chunk.js.map",
+    "index.html": "/job-voter-app/index.html",
+    "static/css/2.c1256375.chunk.css.map": "/job-voter-app/static/css/2.c1256375.chunk.css.map",
+    "static/css/main.8be209b7.chunk.css.map": "/job-voter-app/static/css/main.8be209b7.chunk.css.map",
+    "static/js/2.fa174859.chunk.js.LICENSE.txt": "/job-voter-app/static/js/2.fa174859.chunk.js.LICENSE.txt",
+    "static/media/Vote.css": "/job-voter-app/static/media/AxiformaRegular.008758f5.otf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a94b621a.js",
+    "static/css/2.c1256375.chunk.css",
+    "static/js/2.fa174859.chunk.js",
+    "static/css/main.8be209b7.chunk.css",
+    "static/js/main.1fe87867.chunk.js"
+  ]
+}
