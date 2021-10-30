@@ -43,7 +43,7 @@
     margin-top: 3em;
     padding-bottom: 2em;
     font-family: 'Nunito';
-    font-weight: 600;
+    font-weight: 800;
   }
   @media (max-width : 980px) {
     .container {
@@ -54,7 +54,7 @@
       padding-bottom: 1em;
       margin-right: 0.2em;
       margin-left: 0.2em;
-      font-size: 25px;
+      font-size: 30px;
     }
     .voteButton {
       width: 100%;

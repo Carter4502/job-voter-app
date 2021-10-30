@@ -5,6 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap');
 .leaderTitle {
   font-family: 'Nunito', sans-serif;
+  padding-bottom: 1em;
+}
+.searchBar {
+  margin-bottom: 10px;
+  outline: none;
+  width: 70%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)!important;
+  border-width: 1px;
 }
 .head3 {
   padding-bottom: 5em;
@@ -44,16 +52,25 @@ td {
   border-radius: 0.5rem;
   border-width: 1px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)!important;
+  margin-bottom: 10px;
 }
 
 @media (max-width : 980px) {
+  .leaderTitle {
+    padding-bottom: 0.25em;
+  }
   .card2 {
     margin-top: 0em;
     padding-top: 25px;
     width: 100%;
+    border-radius: 0;
+    margin-bottom: 0px;
   }
   .border {
     margin-top: 10px;
-    width: 90%;
+    width: 96%;
+  }
+  .searchBar {
+    width: 92%;
   }
 }

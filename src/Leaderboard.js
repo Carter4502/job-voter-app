@@ -14,6 +14,7 @@ import "./Leaderboard.css";
 import { styled } from '@mui/material/styles';
 import {Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import SearchBar from "material-ui-search-bar";
 
 Amplify.configure(awsconfig);
 
@@ -32,14 +33,30 @@ function Leaderboard() {
       }));
 
     const[jobs, setJobs] = useState([]);
+    const[filteredJobs, setFilteredJobs] = useState([]);
+    const[searched, setSearched] = useState("");
+    const[filteredEmpty, setFilteredEmpty] = useState(true);
     useEffect(() => {
         fetchJobs();
     }, [])
+    const requestSearch = (searchedVal) => {
+        
+      const filteredJobs = jobs.filter((row) => {
+        return row.company.toLowerCase().startsWith(searchedVal.toLowerCase())
+      })
+      setFilteredEmpty(false);
+      setFilteredJobs(filteredJobs);
+    };
+    
+    const cancelSearch = () => {
+        setSearched("");
+        setFilteredEmpty(true);
+        requestSearch(searched);
+    };
     const fetchJobs = async() => {
         try {
             const jobData = await API.graphql(graphqlOperation(listJobs));
             const jobList = jobData.data.listJobs.items;
-            console.log('job list', jobList);
             jobList.sort((el1, el2) => {return el2.elo - el1.elo});
             setJobs(jobList);
         } catch (error) {
@@ -51,27 +68,50 @@ function Leaderboard() {
                 <div className="head3">
                 <Link to="/"><Button className="lb2" variant='primary'>Contribute Votes</Button></Link>
                 </div>
-            <div className = "card2">
                 <h1 className="leaderTitle">Leaderboard</h1>
+            <div className = "card2">
+                <SearchBar
+            value={searched}
+            onChange={(searchVal) => requestSearch(searchVal)}
+            onCancelSearch={() => cancelSearch()}
+            className="searchBar"
+            placeholder="Search a company"
+            />
             <div className="border">
+            
             <TableContainer component={Paper}>
                 <Table sx={{}} aria-label="simple table">
                     <TableHead>
                     <TableRow>
+                    {(filteredEmpty || filteredJobs.length === jobs.length) &&<StyledTableCell>#</StyledTableCell>}
                         <StyledTableCell>Company</StyledTableCell>
-                        <StyledTableCell>Position</StyledTableCell>
+                        <StyledTableCell>Pay</StyledTableCell>
                         <StyledTableCell>Elo</StyledTableCell>
                     </TableRow>
                     </TableHead>
                 <TableBody>
-                {jobs.map((job, idx) => (
+                {(filteredEmpty || filteredJobs.length === jobs.length) && jobs.map((job, idx) => (
+                    <TableRow
+                    key={job.company}
+                    >
+                    <StyledTableCell component="th" scope="row">
+                        {idx + 1}
+                        </StyledTableCell>
+                    <StyledTableCell component="th" scope="row">
+                        {job.company}
+                    </StyledTableCell>
+                    <StyledTableCell component="th" scope="row">${job.salary}/hr</StyledTableCell>
+                    <StyledTableCell component="th" scope="row">{job.elo}</StyledTableCell>
+                    </TableRow>
+                ))}
+                {!filteredEmpty && filteredJobs.length !== jobs.length && filteredJobs.map((job, idx) => (
                     <TableRow
                     key={job.company}
                     >
                     <StyledTableCell component="th" scope="row">
                         {job.company}
                     </StyledTableCell>
-                    <StyledTableCell component="th" scope="row">{job.position}</StyledTableCell>
+                    <StyledTableCell component="th" scope="row">${job.salary}/hr</StyledTableCell>
                     <StyledTableCell component="th" scope="row">{job.elo}</StyledTableCell>
                     </TableRow>
                 ))}
